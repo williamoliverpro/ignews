@@ -34,7 +34,7 @@ This app features all the latest tools and practices in web development!
 - ⚛️ **Next.js** — Next.js is a React framework that allows SSR and the SSG.
 - 🟪 **Stripe** — Online payment processing for internet businesses.
 - 🐦 **Fauna** — Is a flexible, developer-friendly, transactional database available as a secure, cloud API with native GraphQL.
-- ✔️ **Prismic** — The Headless Website Builder for Jamstack.
+- 🌀 **Prismic** — The Headless Website Builder for Jamstack.
 
 ## Getting started
 
