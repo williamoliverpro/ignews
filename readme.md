@@ -20,7 +20,7 @@ Ig.news
 ### Screenshots
 
 <p align="center" style="display: flex; align-items: flex-start; justify-content: center;">
-  <img alt="Home Page Screenshot" title="homepage" src="https://www.youtube.com/watch?v=ViRzGaNTtBY&list=WL&index=2&ab_channel=SpaceToday" width="400px">
+  <img alt="Home Page Screenshot" title="homepage" src="https://github.com/williamoliverpro/screenshots/blob/main/ignews/ignews_home.png" width="400px">
 
   <img alt="Posts Page Screenshot" title="#postspage" src="https://github.com/williamoliverpro/screenshots/blob/main/ignews/ignews_posts.png" width="400px">
 </p>
