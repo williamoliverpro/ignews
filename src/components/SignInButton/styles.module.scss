@@ -31,3 +31,13 @@
         filter: brightness(0.8)
     }
 }
+
+.signInButtonMobile {
+    height: 0;
+    border-radius: none;
+    border-radius: 3rem;
+    padding: 0;
+    background: var(--gray-900);
+    color: #eba417;
+    font-weight: normal;
+}

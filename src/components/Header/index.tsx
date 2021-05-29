@@ -1,13 +1,22 @@
+import { useMediaQuery } from 'react-responsive'
+import { useRouter } from 'next/router'
+
 import { SignInButton } from '../SignInButton'
 
 import styles from './styles.module.scss'
 import { ActiveLink } from '../ActiveLink'
 
 export function Header() {
+    const isDesktopOrLaptop = useMediaQuery({
+        query: '(min-device-width: 900px)'
+    })
+    const router = useRouter()
+
     return (
         <header className={styles.headerContainer}>
             <div className={styles.headerContent}>
-                <img src="/images/logo.svg" alt="ig.news" />
+                {isDesktopOrLaptop &&
+                    <img src="/images/logo.svg" alt="ig.news" />}
                 <nav>
                     <ActiveLink activeClassName={styles.active} href="/">
                         <a>Home</a>
@@ -17,7 +26,7 @@ export function Header() {
                     </ActiveLink>
                 </nav>
 
-                <SignInButton />
+                {(isDesktopOrLaptop || !isDesktopOrLaptop && router.pathname !== '/') && <SignInButton />}
             </div>
         </header>
     )

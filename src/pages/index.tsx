@@ -1,11 +1,13 @@
 import { GetStaticProps } from 'next'
 import Head from 'next/head'
+import React from 'react'
+import { useMediaQuery } from 'react-responsive'
 
 import { SubscribeButton } from '../components/SubscribeButton'
+import { SignInButton } from '../components/SignInButton'
 import { stripe } from '../services/stripe'
 
 import styles from './home.module.scss'
-
 interface HomeProps {
   product: {
     priceId: string
@@ -14,24 +16,31 @@ interface HomeProps {
 }
 
 export default function Home({ product }: HomeProps) {
+  const isDesktopOrLaptop = useMediaQuery({
+    query: '(min-device-width: 900px)'
+  })
+
   return (
     <>
-    <Head>
-      <title>Home | ig.news</title>
-    </Head>
-    <main className={styles.contentContainer}>
-      <section className={styles.hero}>
-        <span>👏 Hey, welcome</span>
-        <h1>News about the <span>React</span> world</h1>
-        <p>
-          Get access to all the publications <br />
-          <span>for {product.amount} month</span>
-        </p>
-        <SubscribeButton />
-      </section>
+      <Head>
+        <title>Home | ig.news</title>
+      </Head>
+      <main className={`${styles.contentContainer} ${!isDesktopOrLaptop && styles.contentContainerMobile}`}>
+        <section className={styles.hero}>
+          <span>👏 Hey, welcome</span>
+          <h1>News about the <span>React</span> world</h1>
+          <p>
+            Get access to all the publications <br />
+            <span>for {product.amount} month</span>
+          </p>
+          <SubscribeButton />
 
-      <img src="/images/avatar.svg" alt="Girl coding"/>
-    </main>
+          {!isDesktopOrLaptop && <SignInButton />}
+
+        </section>
+
+        {isDesktopOrLaptop && <img src="/images/avatar.svg" alt="Girl coding" />}
+      </main>
     </>
   )
 }

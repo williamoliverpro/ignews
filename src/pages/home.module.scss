@@ -43,3 +43,25 @@
         margin-top: 2.5rem;
     }
 }
+
+.contentContainerMobile {
+    height: calc(100vh - 13rem);
+
+    .hero {
+        margin: auto;
+        
+        h1 {
+            font-size: 3.0rem;
+            line-height: 3.5rem;
+            margin-top: 1.5rem;
+        }
+    
+        button {
+            margin-top: 1.5rem;
+            width: 100%;
+            max-width: 500px;
+            height: 4rem;
+            font-size: 1.25rem;
+        }
+    }
+}
