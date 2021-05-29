@@ -9,14 +9,10 @@ export function Header() {
     const isDesktopOrLaptop = useMediaQuery({
         query: '(min-device-width: 1224px)'
     })
-    const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
-
-    console.log("isTabletOrMobile", isTabletOrMobile)
-    console.log("isDesktopOrLaptop", isDesktopOrLaptop)
 
     return (
         <header className={styles.headerContainer}>
-            <div className={`${styles.headerContent} ${isTabletOrMobile ? styles.headerContentMobile : ""}`}>
+            <div className={styles.headerContent}>
                 {isDesktopOrLaptop &&
                     <img src="/images/logo.svg" alt="ig.news" />
                 }

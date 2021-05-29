@@ -57,8 +57,10 @@
     }
 }
 
-.headerContentMobile {
-    nav {
-        margin-left: 0;
+@media (max-width: 1224px) {
+    .headerContainer {
+        nav {
+            margin-left: 0;
+        }
     }
 }

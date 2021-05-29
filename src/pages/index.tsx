@@ -1,6 +1,6 @@
 import { GetStaticProps } from 'next'
 import Head from 'next/head'
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useMediaQuery } from 'react-responsive'
 
 import { SubscribeButton } from '../components/SubscribeButton'
@@ -18,14 +18,13 @@ export default function Home({ product }: HomeProps) {
   const isDesktopOrLaptop = useMediaQuery({
     query: '(min-device-width: 1224px)'
   })
-  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
 
   return (
     <>
       <Head>
         <title>Home | ig.news</title>
       </Head>
-      <main className={`${styles.contentContainer} ${isTabletOrMobile && styles.contentContainerMobile}`}>
+      <main className={styles.contentContainer}>
         <section className={styles.hero}>
           <span>👏 Hey, welcome</span>
           <h1>News about the <span>React</span> world</h1>

@@ -1,5 +1,5 @@
 import { FaGithub } from 'react-icons/fa'
-import { FiLogIn, FiX } from 'react-icons/fi'
+import { FiX } from 'react-icons/fi'
 import { signIn, signOut, useSession } from 'next-auth/client'
 import { useMediaQuery } from 'react-responsive'
 
@@ -10,12 +10,11 @@ export function SignInButton() {
     const isDesktopOrLaptop = useMediaQuery({
         query: '(min-device-width: 1224px)'
     })
-    const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
 
     return session ? (
         <button
             type="button"
-            className={`${styles.signInButton} ${isTabletOrMobile && styles.signInButtonMobile}`}
+            className={styles.signInButton}
             onClick={() => signOut()}
         >
             {isDesktopOrLaptop ? (
@@ -34,7 +33,7 @@ export function SignInButton() {
     ) : (
         <button
             type="button"
-            className={`${styles.signInButton} ${isTabletOrMobile && styles.signInButtonMobile}`}
+            className={styles.signInButton}
             onClick={() => signIn('github')}
         >
 
@@ -45,7 +44,7 @@ export function SignInButton() {
                 </>
             ) : (
                 <>
-                    < FaGithub color="#eba417" />
+                    <FaGithub color="#eba417" />
                     Sign in
                 </>
             )}

@@ -3,7 +3,6 @@ import Head from 'next/head'
 import Prismic from '@prismicio/client'
 import { RichText } from 'prismic-dom'
 import Link from 'next/link'
-import { useMediaQuery } from 'react-responsive'
 
 import { getPrismicClient } from '../../services/prismic'
 
@@ -21,17 +20,13 @@ interface PostsProps {
 }
 
 export default function Posts({ posts }: PostsProps) {
-    const isDesktopOrLaptop = useMediaQuery({
-        query: '(min-device-width: 900px)'
-      })
-
     return (
         <>
             <Head>
                 <title>Posts | Ignews</title>
             </Head>
 
-            <main className={`${styles.container} ${!isDesktopOrLaptop && styles.containerMobile}`}>
+            <main className={styles.container}>
                 <div className={styles.posts}>
                     {posts.map(post => (
                         <Link key={post.slug} href={`posts/${post.slug}`}>

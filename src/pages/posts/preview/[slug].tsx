@@ -5,7 +5,6 @@ import Head from "next/head"
 import Link from "next/link"
 import { useRouter } from "next/router"
 import { RichText } from "prismic-dom"
-import { useMediaQuery } from 'react-responsive'
 
 import { getPrismicClient } from "../../../services/prismic"
 
@@ -23,7 +22,6 @@ interface PostPreviewProps {
 export default function PostPreview({ post }: PostPreviewProps) {
     const [session] = useSession()
     const router = useRouter()
-    const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
 
     useEffect(() => {
         if (session?.activeSubscription) {
@@ -37,7 +35,7 @@ export default function PostPreview({ post }: PostPreviewProps) {
                 <title>{post.title} | Ignews</title>
             </Head>
 
-            <main className={`${styles.container} ${isTabletOrMobile && styles.containerMobile}`}>
+            <main className={styles.container}>
                 <article className={styles.post}>
                     <h1>{post.title}</h1>
                     <time>{post.updatedAt}</time>
@@ -46,7 +44,7 @@ export default function PostPreview({ post }: PostPreviewProps) {
                         dangerouslySetInnerHTML={{ __html: post.content }}
                     />
 
-                    <div className={`${styles.continueReading} ${styles.continueReadingMobile}`}>
+                    <div className={styles.continueReading}>
                         Wanna continue reading?
                         <Link href="/">
                             <a href="/">Subscribe now 🤗</a>

@@ -44,8 +44,10 @@
     }
 }
 
-.containerMobile {
-    div {
-        margin: 2rem auto 0;
+@media (max-width: 1224px) {
+    .container {
+        div {
+            margin: 2rem auto 0;
+        }
     }
 }

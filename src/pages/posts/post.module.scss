@@ -66,16 +66,18 @@
     }
 }
 
-.containerMobile {
-    article {
-        margin: 2rem auto 0;
+@media (max-width: 1224px) {
+    .container {
+        article {
+            margin: 2rem auto 0;
+    
+            h1 {
+                font-size: 2rem;
+            }
+        }    
+    }
 
-        h1 {
-            font-size: 2rem;
-        }
-    }    
-}
-
-.continueReadingMobile {
-    padding: 1rem;
+    .continueReading {
+        padding: 1rem;
+    }
 }

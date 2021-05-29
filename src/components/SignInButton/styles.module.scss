@@ -32,17 +32,19 @@
     }
 }
 
-.signInButtonMobile {
-    height: 2;
-    border-radius: none;
-    border-radius: 3rem;
-    padding: 0 1rem;
-    background: var(--gray-850);
-    color: var(--white);
-    font-weight: bold;
-    font-weight: normal;
-
-    svg:first-child {
-        margin-right: 0.5rem;
+@media (max-width: 1224px) {
+    .signInButton {
+        height: 2;
+        border-radius: none;
+        border-radius: 3rem;
+        padding: 0 1rem;
+        background: var(--gray-850);
+        color: var(--white);
+        font-weight: bold;
+        font-weight: normal;
+    
+        svg:first-child {
+            margin-right: 0.5rem;
+        }
     }
 }
