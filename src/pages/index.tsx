@@ -20,9 +20,6 @@ export default function Home({ product }: HomeProps) {
   })
   const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
 
-  console.log("isTabletOrMobile", isTabletOrMobile)
-  console.log("isTabletOrMobile", isDesktopOrLaptop)
-
   return (
     <>
       <Head>
