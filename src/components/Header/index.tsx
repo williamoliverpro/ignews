@@ -16,7 +16,7 @@ export function Header() {
 
     return (
         <header className={styles.headerContainer}>
-            <div className={`${styles.headerContent} ${isTabletOrMobile && styles.headerContentMobile}`}>
+            <div className={`${styles.headerContent} ${isTabletOrMobile ? styles.headerContentMobile : ""}`}>
                 {isDesktopOrLaptop &&
                     <img src="/images/logo.svg" alt="ig.news" />
                 }
