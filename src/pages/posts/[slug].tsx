@@ -2,6 +2,7 @@ import { GetServerSideProps } from "next"
 import { getSession } from "next-auth/client"
 import Head from "next/head"
 import { RichText } from "prismic-dom"
+import { useMediaQuery } from 'react-responsive'
 
 import { getPrismicClient } from "../../services/prismic"
 
@@ -17,13 +18,15 @@ interface PostProps {
 }
 
 export default function Post({ post }: PostProps) {
+    const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
+
     return (
         <>
             <Head>
                 <title>{post.title} | Ignews</title>
             </Head>
 
-            <main className={styles.container}>
+            <main className={`${styles.container} ${isTabletOrMobile && styles.containerMobile}`}>
                 <article className={styles.post}>
                     <h1>{post.title}</h1>
                     <time>{post.updatedAt}</time>
