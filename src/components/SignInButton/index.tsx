@@ -27,7 +27,7 @@ export function SignInButton() {
             ) : (
                 <>
                     <FaGithub color="#04d361" />
-                    Sign in
+                    Logout
                 </>
             )}
         </button>
