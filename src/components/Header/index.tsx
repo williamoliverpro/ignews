@@ -11,7 +11,6 @@ export function Header() {
     })
     const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
 
-
     return (
         <header className={styles.headerContainer}>
             <div className={`${styles.headerContent} ${isTabletOrMobile && styles.headerContentMobile}`}>
